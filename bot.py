@@ -20,7 +20,8 @@ from settings import (
 
 menu = [
     ["💰 Balance", "👥 Referral"],
-    ["📋 Task", "📤 Withdraw"],
+    ["📋 Task", "📤 Submit Work"],
+    ["📤 Withdraw"],
     ["ℹ️ Help"],
 ]
 CHANNEL_LINK = "https://t.me/FBInstaVault24"
