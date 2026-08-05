@@ -41,6 +41,7 @@ Choose an option from the menu below.
         text,
         reply_markup=keyboard
     )
+
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
