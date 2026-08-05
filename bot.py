@@ -78,11 +78,11 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     elif msg == "ℹ️ Help":
-    await update.message.reply_text(
-        "ℹ️ Help Center\n\n"
-        "👋 Welcome to DailyEasyEarnFBInsta\n\n"
-        "📋 Complete tasks to earn rewards.\n"
-        "👥 Invite friends to earn referral bonuses.\n"
+        await update.message.reply_text(
+            "ℹ️ Help Center\n\n"
+            "👋 Welcome to DailyEasyEarnFBInsta\n\n"
+            "📋 Complete tasks to earn rewards.\n"
+            "👥 Invite friends to earn referral bonuses.\n"
         "💰 Minimum Withdraw: $0.20 USDT\n"
         f"💳 Payment Method: {WITHDRAW_METHOD}\n\n"
         "📞 Contact Admin: @Dmitri_rw1"
