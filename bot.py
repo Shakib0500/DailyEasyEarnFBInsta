@@ -43,7 +43,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     elif msg == "ℹ️ Help":
-        await update.message.reply_text("Need help? Contact Admin.") update.message.reply_text("Need help? Contact Admin.")
+        await update.message.reply_text("Need help? Contact Admin.")
 
 
 async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
