@@ -112,6 +112,11 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🍪 FB Cookies Submit\n\n"
         "📤 Submit Work চাপ দিয়ে .xlsx file পাঠান।"
     )
+elif msg == "📤 Submit Work":
+        await update.message.reply_text(
+            "📤 আপনার .xlsx file এখন পাঠান।\n\n"
+            "ফাইল পাওয়ার পর Admin-এর কাছে পাঠানো হবে।"
+        )
 
     elif msg == "📤 Withdraw":
         balance = get_balance(update.effective_user.id)
