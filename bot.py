@@ -41,7 +41,18 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("🎁 Daily Bonus feature is coming soon.")
 
     elif msg == "📤 Withdraw":
-        await update.message.reply_text("📤 Withdraw feature is coming soon.")
+    balance = get_balance(update.effective_user.id)
+
+    if balance < MIN_WITHDRAW:
+        await update.message.reply_text(
+            f"❌ Minimum Withdraw: ${MIN_WITHDRAW:.2f}\n"
+            f"💰 Your Balance: ${balance:.2f}"
+        )
+    else:
+        await update.message.reply_text(
+            f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
+            "Please send your USDT (BEP20) wallet address."
+        )
 
     elif msg == "ℹ️ Help":
         await update.message.reply_text("Need help? Contact Admin.")
