@@ -25,6 +25,25 @@ menu = [
 ]
 CHANNEL_LINK = "https://t.me/FBInstaVault24"
 
+async def verify_join(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    user_id = query.from_user.id
+
+    member = await context.bot.get_chat_member(
+        chat_id="@FBInstaVault24",
+        user_id=user_id
+    )
+
+    if member.status in ["member", "administrator", "creator"]:
+        await query.message.reply_text(
+            "✅ Join Verified!\n\nWelcome to DailyEasyEarnFBInsta 🎉"
+        )
+    else:
+        await query.message.reply_text(
+            "❌ আগে Channel Join করুন।"
+        )
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     add_user(update.effective_user.id)
 
