@@ -11,6 +11,18 @@ menu = [
     ["ℹ️ Help"]
 ]
 
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = ReplyKeyboardMarkup(menu, resize_keyboard=True)
+
+    text = f"""
+👋 Welcome {update.effective_user.first_name}!
+
+🎉 Welcome to DailyEasyEarnFBInsta
+
+Choose an option from the menu below.
+"""
+
+    await update.message.reply_text(text, reply_markup=keyboard)
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
