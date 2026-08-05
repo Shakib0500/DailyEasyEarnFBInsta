@@ -29,6 +29,8 @@ async def verify_join(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
+    await query.message.reply_text("🔄 Checking...")
+
     try:
         user_id = query.from_user.id
 
