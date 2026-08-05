@@ -40,7 +40,20 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif msg == "🎁 Daily Bonus":
         await update.message.reply_text("🎁 Daily Bonus feature is coming soon.")
 
-    elif msg == "📤 Withdraw":
+    if msg == "💰 Balance":
+    balance = get_balance(update.effective_user.id)
+    await update.message.reply_text(f"💰 Balance: ${balance:.2f} USD")
+
+elif msg == "👥 Referral":
+    await update.message.reply_text(
+        "👥 Your Referral Link:\nhttps://t.me/@FBInstaEasyEarnBot?start="
+        + str(update.effective_user.id)
+    )
+
+elif msg == "🎁 Daily Bonus":
+    await update.message.reply_text("🎁 Daily Bonus feature is coming soon.")
+
+elif msg == "📤 Withdraw":
     balance = get_balance(update.effective_user.id)
 
     if balance < MIN_WITHDRAW:
@@ -53,6 +66,11 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
             "Please send your USDT (BEP20) wallet address."
         )
+        )
+    else:
+        await update.message.reply_text(
+            f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
+            "Please send your USDT (BEP20) wallet address
 
     elif msg == "ℹ️ Help":
         await update.message.reply_text("Need help? Contact Admin.")
