@@ -28,7 +28,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
     if msg == "💰 Balance":
-        await update.message.reply_text("💰 Your Balance: 0 BDT")
+        await update.message.reply_text(f"💰 Balance: ${balance:.2f} USD")
 
     elif msg == "👥 Referral":
         await update.message.reply_text("👥 Your Referral Link:\nhttps://t.me/@FBInstaEasyEarnBot?start=" + str(update.effective_user.id))
