@@ -12,18 +12,6 @@ menu = [
     ["ℹ️ Help"]
 ]
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = ReplyKeyboardMarkup(menu, resize_keyboard=True)
-
-    text = f"""
-👋 Welcome {update.effective_user.first_name}!
-
-🎉 Welcome to DailyEasyEarnFBInsta
-
-Choose an option from the menu below.
-"""
-
-    await update.message.reply_text(text, reply_markup=keyboard)
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
@@ -33,47 +21,29 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif msg == "👥 Referral":
         await update.message.reply_text(
-            "👥 Your Referral Link:\nhttps://t.me/@FBInstaEasyEarnBot?start="
+            "👥 Your Referral Link:\nhttps://t.me/FBInstaEasyEarnBot?start="
             + str(update.effective_user.id)
         )
 
     elif msg == "🎁 Daily Bonus":
         await update.message.reply_text("🎁 Daily Bonus feature is coming soon.")
 
-    if msg == "💰 Balance":
-    balance = get_balance(update.effective_user.id)
-    await update.message.reply_text(f"💰 Balance: ${balance:.2f} USD")
+    elif msg == "📤 Withdraw":
+        balance = get_balance(update.effective_user.id)
 
-elif msg == "👥 Referral":
-    await update.message.reply_text(
-        "👥 Your Referral Link:\nhttps://t.me/@FBInstaEasyEarnBot?start="
-        + str(update.effective_user.id)
-    )
-
-elif msg == "🎁 Daily Bonus":
-    await update.message.reply_text("🎁 Daily Bonus feature is coming soon.")
-
-elif msg == "📤 Withdraw":
-    balance = get_balance(update.effective_user.id)
-
-    if balance < MIN_WITHDRAW:
-        await update.message.reply_text(
-            f"❌ Minimum Withdraw: ${MIN_WITHDRAW:.2f}\n"
-            f"💰 Your Balance: ${balance:.2f}"
-        )
-    else:
-        await update.message.reply_text(
-            f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
-            "Please send your USDT (BEP20) wallet address."
-        )
-        )
-    else:
-        await update.message.reply_text(
-            f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
-            "Please send your USDT (BEP20) wallet address
+        if balance < MIN_WITHDRAW:
+            await update.message.reply_text(
+                f"❌ Minimum Withdraw: ${MIN_WITHDRAW:.2f}\n"
+                f"💰 Your Balance: ${balance:.2f}"
+            )
+        else:
+            await update.message.reply_text(
+                f"💳 Withdraw Method: {WITHDRAW_METHOD}\n\n"
+                "Please send your USDT (BEP20) wallet address."
+            )
 
     elif msg == "ℹ️ Help":
-        await update.message.reply_text("Need help? Contact Admin.")
+        await update.message.reply_text("Need help? Contact Admin.") update.message.reply_text("Need help? Contact Admin.")
 
 
 async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
