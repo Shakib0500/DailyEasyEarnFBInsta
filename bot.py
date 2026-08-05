@@ -2,6 +2,7 @@ from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters, CallbackQueryHandler
 from admin import admin
 from database import get_balance
+from settings import REFERRAL_BONUS, TASK_REWARD, MIN_WITHDRAW, WITHDRAW_METHOD
 
 TOKEN = "8970530045:AAGyLP-wR6C8sc8tMDdm07K4qPTSGLUc9og"
 
