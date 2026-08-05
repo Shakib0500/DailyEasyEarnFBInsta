@@ -20,7 +20,7 @@ from settings import (
 
 menu = [
     ["💰 Balance", "👥 Referral"],
-    ["🎁 Daily Bonus", "📤 Withdraw"],
+    ["📋 Task", "📤 Withdraw"],
     ["ℹ️ Help"],
 ]
 
@@ -58,10 +58,10 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🎁 Referral Bonus: ${REFERRAL_BONUS:.2f} USDT"
         )
 
-    elif msg == "🎁 Daily Bonus":
-        await update.message.reply_text(
-            f"🎁 Daily Task Reward: ${TASK_REWARD:.2f} USDT"
-        )
+    elif msg == "📋 Task":
+    await update.message.reply_text(
+        f"📋 Task Reward: ${TASK_REWARD:.2f} USDT"
+    )
 
     elif msg == "📤 Withdraw":
         balance = get_balance(update.effective_user.id)
