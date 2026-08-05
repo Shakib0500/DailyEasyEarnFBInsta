@@ -40,7 +40,8 @@ Choose an option from the menu below.
     await update.message.reply_text(
         text,
         reply_markup=keyboard
-    )async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    )
+async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
     if msg == "💰 Balance":
@@ -78,7 +79,8 @@ Choose an option from the menu below.
     elif msg == "ℹ️ Help":
         await update.message.reply_text(
             "Need help? Contact Admin."
-        )async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        )
+async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
