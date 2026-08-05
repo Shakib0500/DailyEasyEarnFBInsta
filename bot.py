@@ -107,10 +107,9 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif msg == "📋 Task":
     await update.message.reply_text(
-        "📋 Available Tasks:\n\n"
-        "1️⃣ FB Cookies Submit\n"
-        "2️⃣ Instagram Work\n\n"
-        "📤 Submit Work চাপ দিয়ে কাজ জমা দিন।"
+        "📋 Available Task:\n\n"
+        "🍪 FB Cookies Submit\n\n"
+        "📤 Submit Work চাপ দিয়ে .xlsx file পাঠান।"
     )
 
     elif msg == "📤 Withdraw":
