@@ -87,7 +87,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💳 Payment Method: {WITHDRAW_METHOD}\n\n"
         "📞 Contact Admin: @Dmitri_rw1"
     )
-        )
+
 async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
