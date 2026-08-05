@@ -31,8 +31,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = ReplyKeyboardMarkup(menu, resize_keyboard=True)
 
     channel_button = [
-        [InlineKeyboardButton("📢 Join Channel", url="https://t.me/FBInstaVault24")]
-    ]
+    [InlineKeyboardButton("📢 Join Channel", url=CHANNEL_LINK)],
+    [InlineKeyboardButton("✅ Verify Join", callback_data="verify")]
+]
 
     inline_markup = InlineKeyboardMarkup(channel_button)
 
@@ -125,6 +126,7 @@ app = Application.builder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("admin", admin))
 app.add_handler(CallbackQueryHandler(admin_buttons))
+app.add_handler(CallbackQueryHandler(verify_join, pattern="verify"))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, buttons))
 
 print("Bot is running...")
