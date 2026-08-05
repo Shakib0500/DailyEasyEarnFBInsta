@@ -24,6 +24,13 @@ menu = [
     ["ℹ️ Help"],
 ]
 CHANNEL_LINK = "https://t.me/FBInstaVault24"
+async def verify_join(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print("VERIFY BUTTON CLICKED")
+
+    query = update.callback_query
+    await query.answer()
+
+    await query.message.reply_text("🔄 Checking...")
 
 async def verify_join(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
