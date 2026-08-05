@@ -152,8 +152,8 @@ app = Application.builder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("admin", admin))
-app.add_handler(CallbackQueryHandler(admin_buttons))
 app.add_handler(CallbackQueryHandler(verify_join, pattern="verify"))
+app.add_handler(CallbackQueryHandler(admin_buttons))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, buttons))
 
 print("Bot is running...")
