@@ -28,7 +28,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text
 
     if msg == "💰 Balance":
-    balance = get_balance(update.effective_user.id)
+        balance = get_balance(update.effective_user.id)
     await update.message.reply_text(f"💰 Balance: ${balance:.2f} USD")
 
     elif msg == "👥 Referral":
