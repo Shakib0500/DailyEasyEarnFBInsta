@@ -106,9 +106,12 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif msg == "📋 Task":
-        await update.message.reply_text(
-            f"📋 Task Reward: ${TASK_REWARD:.2f} USDT"
-        )
+    await update.message.reply_text(
+        "📋 Available Tasks:\n\n"
+        "1️⃣ FB Cookies Submit\n"
+        "2️⃣ Instagram Work\n\n"
+        "📤 Submit Work চাপ দিয়ে কাজ জমা দিন।"
+    )
 
     elif msg == "📤 Withdraw":
         balance = get_balance(update.effective_user.id)
