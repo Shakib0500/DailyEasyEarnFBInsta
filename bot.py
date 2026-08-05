@@ -30,22 +30,28 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = ReplyKeyboardMarkup(menu, resize_keyboard=True)
 
+    channel_button = [
+        [InlineKeyboardButton("📢 Join Channel", url="https://t.me/FBInstaVault24")]
+    ]
+
+    inline_markup = InlineKeyboardMarkup(channel_button)
+
     text = f"""
 👋 Welcome {update.effective_user.first_name}!
 
 🎉 Welcome to DailyEasyEarnFBInsta
 
-Choose an option from the menu below.
+📢 Please join our channel.
 """
 
-  inline_keyboard = [
-        [InlineKeyboardButton("📢 Join Channel", url=CHANNEL_LINK)]
-    ]
-
-    inline_markup = InlineKeyboardMarkup(inline_keyboard)  
-await update.message.reply_text(
+    await update.message.reply_text(
         text,
         reply_markup=inline_markup
+    )
+
+    await update.message.reply_text(
+        "👇 Bot Menu:",
+        reply_markup=keyboard
     )
 
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
