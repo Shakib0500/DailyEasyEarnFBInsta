@@ -1,4 +1,4 @@
-from telegram import Update, ReplyKeyboardMarkup
+from telegram import Update, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -23,6 +23,7 @@ menu = [
     ["📋 Task", "📤 Withdraw"],
     ["ℹ️ Help"],
 ]
+CHANNEL_LINK = "https://t.me/FBInstaVault24"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     add_user(update.effective_user.id)
@@ -37,9 +38,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 Choose an option from the menu below.
 """
 
-    await update.message.reply_text(
+  inline_keyboard = [
+        [InlineKeyboardButton("📢 Join Channel", url=CHANNEL_LINK)]
+    ]
+
+    inline_markup = InlineKeyboardMarkup(inline_keyboard)  
+await update.message.reply_text(
         text,
-        reply_markup=keyboard
+        reply_markup=inline_markup
     )
 
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
