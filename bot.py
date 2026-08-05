@@ -59,8 +59,7 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif msg == "📋 Task":
-        await 
-update.message.reply_text(
+        await update.message.reply_text(
             f"📋 Task Reward: ${TASK_REWARD:.2f} USDT"
         )
 
